@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"./basic"
+	"jiho_local/basic"
 )
 
 func main() {
