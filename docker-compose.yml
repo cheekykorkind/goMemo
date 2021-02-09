@@ -1,0 +1,23 @@
+version: '3'
+services:
+  go-memo:
+    container_name: 'go-memo'
+    user: $DOCKER_UID:$DOCKER_GID
+    build:
+      context: .
+      args:
+        UID: $DOCKER_UID
+        GID: $DOCKER_GID
+        UNAME: $USER
+    tty: true
+    working_dir: '/home/$USER/workspace'
+    volumes:
+      - .:/home/$USER/workspace
+    entrypoint: |
+      sh -e -c "
+      whoami
+      sudo chown $USER -R /home/$USER/workspace
+      pwd
+
+      /bin/sh
+      "
