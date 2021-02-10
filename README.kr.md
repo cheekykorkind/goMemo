@@ -21,7 +21,7 @@ GOPATH=~/workspace
 
 ## go test에 색갈 입히기
 - 인스톨 : `go get -u github.com/rakyll/gotest`
-- 실행 : `gotest -v ./testing/`
+- 실행 : `gotest -v ./...`
 
 ## unit test에 관해서
 - `t.Error`, `t.Fatal` 가 실행되지 않은 테스트 케이스는 성공으로 간주한다.
